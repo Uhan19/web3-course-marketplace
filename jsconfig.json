@@ -4,7 +4,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/app/*": ["app/*"],
-      "@/public/*": ["public/*"]
+      "@/public/*": ["public/*"],
+      "@/content/*": ["content/*"],
+      "@/types/*": ["types/*"]
     }
   }
 }

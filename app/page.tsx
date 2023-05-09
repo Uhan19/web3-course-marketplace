@@ -1,6 +1,4 @@
 import {
-  Navbar,
-  Footer,
   Breadcrumbs,
   Hero,
   Address,
@@ -8,24 +6,39 @@ import {
   List,
   Card,
 } from "@/components/index";
+import { CourseData } from "@/types";
+import { getAllCourse } from "@/content";
 
-export default function Home() {
-  return (
-    <div>
-      <div className="relative bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4">
-          <div className="fit">
-            <Navbar />
-            <Hero />
-            <Breadcrumbs />
-            <Address />
-            <WalletBar />
-            <Card />
-            <List />
-            <Footer />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+interface HomeProps {
+  courses: CourseData;
 }
+
+const Home: React.FC<HomeProps> = () => {
+  const courses = getData().data;
+  return (
+    <>
+      <Hero />
+      {/* <Breadcrumbs /> */}
+      <Address />
+      {/* <WalletBar /> */}
+      <Card />
+      <List courses={courses} />
+    </>
+  );
+};
+
+const getData = () => {
+  const courses = getAllCourse();
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  // if (!res.ok) {
+  //   // This will activate the closest `error.js` Error Boundary
+  //   throw new Error("Failed to fetch data");
+  // }
+
+  return courses;
+};
+
+export default Home;
