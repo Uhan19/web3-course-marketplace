@@ -14,7 +14,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = () => {
-  const courses = getData().data;
+  const courses = getData();
   return (
     <>
       <Hero />
@@ -28,17 +28,8 @@ const Home: React.FC<HomeProps> = () => {
 };
 
 const getData = () => {
-  const courses = getAllCourse();
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  // Recommendation: handle errors
-  // if (!res.ok) {
-  //   // This will activate the closest `error.js` Error Boundary
-  //   throw new Error("Failed to fetch data");
-  // }
-
-  return courses;
+  const { data } = getAllCourse();
+  return data;
 };
 
 export default Home;
