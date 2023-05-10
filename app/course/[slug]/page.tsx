@@ -11,8 +11,8 @@ const Course = ({ params }: { params: any }) => {
           description={courses.description}
           coverImage={courses.coverImage}
         />
-        <KeyPoint />
-        <Lecture />
+        <KeyPoint points={courses.wsl} />
+        <Lecture locked={true} />
         <Modal />
       </div>
     </>

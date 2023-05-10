@@ -33,12 +33,12 @@ export const Navbar = () => {
               >
                 Wishlist
               </Link>
-              <Link
+              <a
                 href="#"
-                className="font-medium mr-8 text-gray-500 hover:text-gray-900"
+                className="px-8 py-3 border text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Log in
-              </Link>
+                Connect
+              </a>
             </div>
           </div>
         </nav>

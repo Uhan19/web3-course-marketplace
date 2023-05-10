@@ -55,9 +55,8 @@ export const CourseHero = ({ title, description, coverImage }) => {
           <Image
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
             src={coverImage}
-            width={500}
-            height={2000}
             alt={title}
+            fill={true}
           />
         </div>
       </div>
