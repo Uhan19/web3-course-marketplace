@@ -1,4 +1,4 @@
-import { Navbar, Footer } from "@/components/index";
+import { Navbar, Footer, Web3Provider, useWeb3 } from "@/components";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative max-w-7xl mx-auto px-4">
-          <Navbar />
-          <div className="fit">{children}</div>
+        <Web3Provider>
+          <div className="relative max-w-7xl mx-auto px-4">
+            <Navbar />
+            <div className="fit">{children}</div>
+          </div>
           <Footer />
-        </div>
+        </Web3Provider>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+"use client";
 import {
   Breadcrumbs,
   Hero,
@@ -5,6 +6,7 @@ import {
   WalletBar,
   List,
   Card,
+  useWeb3,
 } from "@/components/index";
 import { CourseData } from "@/types";
 import { getAllCourse } from "@/content";
@@ -15,8 +17,11 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = () => {
   const courses = getData();
+  const { test } = useWeb3();
+
   return (
     <>
+      {test}
       <Hero />
       {/* <Breadcrumbs /> */}
       <Address />
