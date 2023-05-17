@@ -17,11 +17,15 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = () => {
   const courses = getData();
-  const { test } = useWeb3();
+  const { web3, isLoading } = useWeb3();
 
   return (
     <>
-      {test}
+      {isLoading
+        ? "is loading web3"
+        : web3
+        ? "web3 is loaded"
+        : "please install metamask"}
       <Hero />
       {/* <Breadcrumbs /> */}
       <Address />
