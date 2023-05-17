@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Breadcrumbs,
   Hero,
@@ -6,7 +7,8 @@ import {
   WalletBar,
   List,
   Card,
-  useWeb3,
+  Navbar,
+  Footer,
 } from "@/components/index";
 import { CourseData } from "@/types";
 import { getAllCourse } from "@/content";
@@ -17,21 +19,17 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = () => {
   const courses = getData();
-  const { web3, isLoading } = useWeb3();
 
   return (
     <>
-      {isLoading
-        ? "is loading web3"
-        : web3
-        ? "web3 is loaded"
-        : "please install metamask"}
+      <Navbar />
       <Hero />
       {/* <Breadcrumbs /> */}
       <Address />
       {/* <WalletBar /> */}
       <Card />
       <List courses={courses} />
+      <Footer />
     </>
   );
 };
